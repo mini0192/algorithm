@@ -5,12 +5,12 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuffer sb = new StringBuffer();
+
         char[] line = br.readLine().toCharArray();
         int N = Integer.parseInt(br.readLine());
 
         Map<Character, int[]> cache = new HashMap<>();
-
-        int[] rtn = new int[N];
 
         for(int loop = 0; loop < N; loop++) {
             String[] get = br.readLine().split(" ");
@@ -30,12 +30,10 @@ public class Main {
                 cache.put(check, data);
             }
 
-            if(l == 0) rtn[loop] = data[r];
-            else rtn[loop] = data[r] - data[l - 1];
+            if(l == 0) sb.append(data[r] + "\n");
+            else sb.append(data[r] - data[l - 1] + "\n");
         }
 
-        for(int i : rtn) {
-            System.out.println(i);
-        }
+        System.out.println(sb.toString());
     }
 }
