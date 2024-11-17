@@ -1,20 +1,19 @@
+import java.io.*;
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
-
         int N = scan.nextInt();
-
-        int[] number =  new int[N];
+        int[] datas = new int[N];
         for(int i = 0; i < N; i++) {
-            number[i] = scan.nextInt();
+            datas[i] = scan.nextInt();
         }
-        Arrays.sort(number);
-
-        for(int num : number) {
-            System.out.println(num);
+        Arrays.sort(datas);
+        for(int d : datas) {
+            System.out.println(d);
         }
     }
 }
