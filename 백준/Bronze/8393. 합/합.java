@@ -1,0 +1,1 @@
+import java.util.*;class Main{public static void main(String[] a){var n = new Scanner(System.in).nextInt();System.out.print(n*++n/2);}}
